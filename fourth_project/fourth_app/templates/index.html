@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title> Fourth Django Project</title>
+        <meta charset=" utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    </head> 
+
+    <body>
+        <div class= "jumbotron"> 
+            <h1> 
+                Fourth Django Project is now up and running.
+            </h1>
+            <em> Go to /user to view the database work. or <a href = "user/"> click here </a></em>
+        </div>
+         &nbsp;
+        <div class ="container">
+                <h1> Fill out the form: </h1>
+
+            <form method="POST"> 
+                {{ index_form.as_p }}
+                {% csrf_token %}
+                <input type="submit" class="btn-primary" vlaue = "Submit">
+            </form>
+        </div>  
+
+
+    </body>
+</html>

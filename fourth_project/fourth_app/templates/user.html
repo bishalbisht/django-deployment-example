@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title> Fourth Django Project- User Page</title>
+        <meta charset=" utf-8">
+    </head> 
+
+    <body>
+        <h1> 
+            User Database
+        </h1>
+        <h2> User data below:  </h2>
+
+        <div class= "userdata"> 
+
+        {% if user_records %}
+            <table> 
+                <thead>
+                    <th> full_name</th>
+                    <th> first_name </th>
+                    <th> last_name </th>
+                    <th> email</th>
+                </thead>
+            {% for usr in user_records %}        
+                <tr>
+                    <td> {{usr.full_name}} </td>
+                    <td> {{usr.first_name}} </td>
+                    <td> {{usr.last_name}} </td>
+                    <td> {{usr.email}} </td>
+                </tr>
+            {% endfor %}
+            
+            </table>
+
+        {% else %}    
+            <b> No User Record could be fetched!</b>
+
+        {% endif %}
+        </div>
+
+
+    </body>
+</html>
